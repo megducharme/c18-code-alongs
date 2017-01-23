@@ -1,12 +1,12 @@
 function toCelsius (userTemp) {
   console.log("userTemp in C function", userTemp);
-  finalTemp = Math.ceil((userTemp-32) * (5/9));
+  finalTemp = Math.ceil(userTemp - 32) * (5/ 9);
   console.log("finalTemp", finalTemp);
 }
 
 function toFahrenheit (userTemp) {
   console.log("userTemp in F function", userTemp)
-  finalTemp = Math.ceil((userTemp+32) * (9/5));
+  finalTemp = Math.ceil(userTemp * (9/ 5) + 32);
 }
 
 var userTemperature = document.getElementById("tempField").value

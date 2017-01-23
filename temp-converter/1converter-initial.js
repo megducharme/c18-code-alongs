@@ -3,7 +3,7 @@ function toCelsius (userTemp) {
 }
 
 function toFahrenheit (userTemp) {
-  finalTemp = (userTemp+32) * (9/5);
+  finalTemp = (userTemp * (9/ 5) + 32);
 }
 
 var userTemperature = document.getElementById("tempField").value

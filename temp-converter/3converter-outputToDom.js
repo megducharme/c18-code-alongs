@@ -1,6 +1,6 @@
 
 function toCelsius (userTemp) {
-  finalTemp = Math.ceil((userTemp-32) * (5/9));
+  finalTemp = Math.ceil(userTemp - 32) * (5/ 9);
 
   if(finalTemp <= 0){
   output.innerHTML = `<p style="color:blue">${finalTemp}<p>`;
@@ -13,7 +13,7 @@ function toCelsius (userTemp) {
 }
 
 function toFahrenheit (userTemp) {
-  finalTemp = Math.ceil((userTemp+32) * (9/5));
+  finalTemp = Math.ceil(userTemp * (9/ 5) + 32);
 
   if(finalTemp <= 32){
   output.innerHTML = `<p style="color:blue">${finalTemp}<p>`;

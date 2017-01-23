@@ -1,7 +1,9 @@
 var output = document.getElementById("output-target")
-var userTemperature = document.getElementById("tempField").value
+var tempInput = document.getElementById("tempField")
 var button = document.getElementById("converter");
-var tempInput = document.getElementById("tempField");
+var celBtn = document.getElementById("c");
+var farBtn = document.getElementById("f");
+var clearText = document.getElementById("clear");
 
 button.addEventListener("click", determineConverter);
 
@@ -15,11 +17,11 @@ function pressed(e) {
 
 
 function determineConverter() {
-  var userTemp = document.getElementById("tempField").value
+  var userTemp = tempInput.value
 
-  if(document.getElementById('c').checked){
+  if(celBtn.checked){
     toCelsius(userTemp)
-  }else if (document.getElementById('f').checked) {
+  }else if (farBtn.checked) {
     toFahrenheit(userTemp)
   }else {
     alert("Please select a converstion");
@@ -42,6 +44,7 @@ function toCelsius (userTemp) {
 
 
 function toFahrenheit (userTemp) {
+  console.log("usertemp", userTemp)
   finalTemp = Math.ceil(userTemp * (9/ 5) + 32);
 
   if(finalTemp <= 32){
@@ -54,14 +57,9 @@ function toFahrenheit (userTemp) {
 }
 
 
-var clearText = document.getElementById("clear").addEventListener("click", function (event){
+clearText.addEventListener("click", function (event){
   tempField.value = "";
   output.innerHTML = "";
-  document.getElementById('c').checked = false;
-  document.getElementById('f').checked = false;
+  celBtn.checked = false;
+  farBtn.checked = false;
 });
-
-
-
-//finally I made this file to show you how I would clean it up as to make it more readable for another dev, or for myself revisiting this project later
-//I put the variables at the top of the file so they are easy to find, and then I tried to put the code in order of execution
